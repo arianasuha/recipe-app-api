@@ -37,7 +37,6 @@ def create_recipe(user, **params):
     }
 
     defaults.update(params)
-    """overriding default"""
 
     recipe = Recipe.objects.create(user=user, **defaults)
     """creates a recipe in the db"""
@@ -49,7 +48,7 @@ def create_user(**params):
 
 
 class PublicRecipeAPITests(TestCase):
-    """Test unauthorized API requests(someone who is not logged in)."""
+    """Test unauthorized API requests."""
 
     def setUp(self):
         self.client = APIClient()
